@@ -2,6 +2,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 from huggingface_hub import login
 import torch
 import pandas as pd
+from collections import Counter
 
 pseudo_labeled_reviews = pd.read_parquet('../datafiles/pseudo_labeled_corpus.parquet', engine='pyarrow')
 pseudo_labeled_reviews = pseudo_labeled_reviews[pseudo_labeled_reviews['relevancy_label']=='maybe-privacy']
@@ -104,8 +105,13 @@ def calculate_metrics(data):
 def llm_inference(reviews, model, tokenizer):
     llm_response = []
     for review in reviews:
-        res = analyze_review(review, model, tokenizer)
-        llm_response.append(res)
+        five_trials=[]
+        for i in range(5):
+            res = analyze_review(review, model, tokenizer)
+            five_trials.append(res)
+        trial_responses = Counter(five_trials)
+        majority = trial_responses.most_common()[0][0]
+        llm_response.append(majority)
     labeled_df = pd.concat([pseudo_labeled_reviews, pd.DataFrame({'llm_response': llm_response})], axis=1)
     metrics = calculate_metrics(labeled_df)
     return metrics
