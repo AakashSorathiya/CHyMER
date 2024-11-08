@@ -23,3 +23,33 @@
 | Llama-3-8B-Instruct | 297 | 361 | 207 | 61 | 0.59 | 0.83 | 0.69 | 1.6x |
 | falcon-7b-instruct | 343 | 71 | 497 | 15 | 0.4 | 0.95 | 0.57 | 1.3x |
 | Mistral-7B-Instruct-v0.3 | 32 | 512 | 56 | 326 | 0.36 | 0.089 | 0.14 | 0.33x |
+
+## Manual inspection results
+
+We calculate pairwise Cohen's kappa coefficient and then take an average of it.
+
+#### Pair 1 cohen's kappa: 0.82
+
+| | | Annotator 1 ||
+| --- | --- | --- | --- |
+| | | yes | no |
+| **Annotator 2** | yes | 322 | 23 |
+| | no | 27 | 228 |
+
+#### Pair 2 cohen's kappa: 0.83
+
+| | | Annotator 1 ||
+| --- | --- | --- | --- |
+| | | yes | no |
+| **Annotator 3** | yes | 372 | 28 |
+| | no | 17 | 183 |
+
+#### Pair 3 cohen's kappa: 0.81
+
+| | | Annotator 1 ||
+| --- | --- | --- | --- |
+| | | yes | no |
+| **Annotator 4** | yes | 227 | 26 |
+| | no | 16 | 185 |
+
+#### **Average cohen's kappa: 0.82**
