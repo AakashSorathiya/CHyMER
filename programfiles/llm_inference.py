@@ -15,7 +15,7 @@ best_F1_score = 0
 access_token = "<huggingface_token>"
 login(access_token)
 
-models = ['meta-llama/Meta-Llama-3.1-8B-Instruct', 'meta-llama/Meta-Llama-3-8B-Instruct', 'tiiuae/falcon-7b-instruct', 'mistralai/Mistral-7B-Instruct-v0.3']
+models = ['meta-llama/Llama-3.1-8B-Instruct', 'meta-llama/Meta-Llama-3-8B-Instruct', 'tiiuae/falcon-7b-instruct', 'mistralai/Mistral-7B-Instruct-v0.3']
 
 domain_specific_hypotheses = [
     "User data being linked across different services.",
