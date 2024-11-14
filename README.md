@@ -1,4 +1,4 @@
-## Experiment materials for the paper "_CHyMER: A <ins>C</ins>ontext-based <ins>Hy</ins>brid approach to <ins>M</ins>ining <ins>E</ins>thical concern-related <ins>R</ins>eviews_"
+## Experiment materials for the paper "_CHyMER: A <ins>C</ins>ontext-based <ins>Hy</ins>brid Approach to <ins>M</ins>ining <ins>E</ins>thical Concern-related App <ins>R</ins>eviews_"
 
 ### Introduction
 
